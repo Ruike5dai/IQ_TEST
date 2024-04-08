@@ -1,12 +1,12 @@
 <?php
     session_start();
-    $answer = $_POST["q2"];
+    $answer = $_POST["q5"];
 
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "iq";
-
+    
     $uid = $_SESSION['uid'];
     
     $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -14,7 +14,7 @@
         die("Connection failed:" . mysqli_connect_error());
     }
     echo "连接成功";
-    $sql = "UPDATE IQ_test SET Q2 = '$answer' WHERE Name = '$uid'";
+    $sql = "UPDATE IQ_test SET Q5 = '$answer' WHERE Name = '$uid'";
 
     if($conn->query($sql) === TRUE){
         echo "插入成功";
@@ -24,6 +24,6 @@
 
     mysqli_close($conn);
 
-    header("Location: Q3.html");
+    header("Location: Q6.html");
     exit;
 ?>

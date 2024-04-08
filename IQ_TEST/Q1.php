@@ -25,6 +25,6 @@
 
     mysqli_close($conn);
 
-    #header("Location: http://localhost/ceshi/Q2.html");
-    #exit;
+    header("Location: Q2.html");
+    exit;
 ?>

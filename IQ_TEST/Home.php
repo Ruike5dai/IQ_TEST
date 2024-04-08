@@ -2,6 +2,10 @@
     session_start();
     $uid = $_POST["Name"];
     $_SESSION['uid'] = $uid;
+    $Score = 0;
+    $Canswers = array('A','A','C','E','E','F','F','E','B','A','C','E','F','A','B');
+    $_SESSION['Canswers'] = $Canswers;
+    $_SESSION['Score'] = $Score;
 
     $servername = "localhost";
     $username = "root";
@@ -23,6 +27,6 @@
 
     mysqli_close($conn);
 
-    header("Location: http://localhost/ceshi/Q1.html");
+    header("Location: Q1.html");
     exit;
 ?>
