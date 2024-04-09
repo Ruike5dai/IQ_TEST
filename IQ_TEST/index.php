@@ -27,6 +27,6 @@
 
     mysqli_close($conn);
 
-    header("Location: Q1.html");
+    header("Location: https://iq-test-neon.vercel.app/Q1.html");
     exit;
 ?>
