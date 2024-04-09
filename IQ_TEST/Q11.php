@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $answer = $_POST["q11"];
+    $answer = $_POST["q10"];
 
     $servername = "localhost";
     $username = "root";
@@ -14,7 +14,7 @@
         die("Connection failed:" . mysqli_connect_error());
     }
     echo "连接成功";
-    $sql = "UPDATE IQ_test SET Q11 = '$answer' WHERE Name = '$uid'";
+    $sql = "UPDATE IQ_test SET Q10 = '$answer' WHERE Name = '$uid'";
 
     if($conn->query($sql) === TRUE){
         echo "插入成功";
@@ -23,7 +23,46 @@
     }
 
     mysqli_close($conn);
-
-    header("Location: Q12.html");
-    exit;
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q11</title>
+<link rel="stylesheet" href="styles.css">
+<script src="function.js"></script>
+</head>
+
+<body class = "content">
+    <div>
+        <img src="Q.jpg" alt="中间图片" class ="question">
+        <div class="answers">
+            <div class="answer">
+                <img src="A1.jpg" alt="选项1">
+            </div>
+            <div class="answer">
+                <img src="A2.jpg" alt="选项2">
+            </div>
+            <div class="answer">
+                <img src="A3.jpg" alt="选项3">
+            </div>
+            <div class="answer">
+                <img src="A4.jpg" alt="选项4">
+            </div>
+            <div class="answer">
+                <img src="A5.jpg" alt="选项5">
+            </div>
+            <div class="answer">
+                <img src="A6.jpg" alt="选项6">
+            </div>
+        </div>
+        <form  action="./Q12.php" method="post">
+            <label>选择答案</label>
+            <input type="text" name = "q11" value="answer">
+            <input type="submit" placeholder="确定">
+        </form>
+    </div>
+</body>
+</html>

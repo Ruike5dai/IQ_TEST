@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $answer = $_POST["q5"];
+    $answer = $_POST["q14"];
 
     $servername = "localhost";
     $username = "root";
@@ -14,14 +14,14 @@
         die("Connection failed:" . mysqli_connect_error());
     }
     echo "连接成功";
-    $sql = "UPDATE IQ_test SET Q5 = '$answer' WHERE Name = '$uid'";
+    $sql = "UPDATE IQ_test SET Q14 = '$answer' WHERE Name = '$uid'";
 
     if($conn->query($sql) === TRUE){
         echo "插入成功";
     }else{
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
+    
     mysqli_close($conn);
 ?>
 
@@ -30,7 +30,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Q6</title>
+<title>Q15</title>
 <link rel="stylesheet" href="styles.css">
 <script src="function.js"></script>
 </head>
@@ -58,9 +58,9 @@
                 <img src="A6.jpg" alt="选项6">
             </div>
         </div>
-        <form  action="./Q7.php" method="post">
+        <form  action="./SCORE.php" method="post">
             <label>选择答案</label>
-            <input type="text" name = "q6" value="answer">
+            <input type="text" name = "q15" value="answer">
             <input type="submit" placeholder="确定">
         </form>
     </div>
