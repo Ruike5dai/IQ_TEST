@@ -62,7 +62,7 @@
                 <img src="./A6.jpg" alt="选项6">
             </div>
         </div>
-        <form  action="./Q1.php" method="post">
+        <form  action="./Q2.php" method="post">
             <label>选择答案</label>
             <input type="text" name = "q1" value="answer">
             <input type="submit" placeholder="确定">
